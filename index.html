@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script type="module">
+      import { init, toggle, isDark } from './src/index.js'
+      init()
+
+      const p = document.createElement('p')
+      const btn = document.createElement('button')
+
+      p.innerText = '测试 iTheme'
+
+      btn.innerText = isDark ? '浅色模式' : '深色模式'
+      btn.onclick = () => {
+        toggle()
+        btn.innerText = isDark ? '浅色模式' : '深色模式'
+      }
+
+      document.body.appendChild(p)
+      document.body.appendChild(btn)
+    </script>
+  </head>
+  <body></body>
+
+  <style>
+    p {
+      background-color: var(--color-background);
+      color: var(--color-text);
+    }
+  </style>
+</html>
